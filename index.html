@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EntertaimmentCentral</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-------HERO SECTION=------------->
+
+    <!--sidebar-->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="#search">Search</a></li>
+            <li><a href="#">My List</a></li>
+            <li><a href="help.html">Help</a></li>
+        </ul>
+    </aside>
+    <section id="hero">
+          <!-----NAVIGATION---------->
+    <nav>
+            <div class="brand">BRAND</div>
+            <div class="toggleBtn"><i class="fa fa-bars"></i></div>
+     </nav>
+    <div class="hero-content">
+        <div class="hero-text">
+            <h2>Welcome to EntertaimmentCentral</h2>
+            <p>Our site uses the best API's to match the best results to your entries.</p>
+
+            <a href="#search" class="btn">Get Started</a>
+        </div>
+        <div class="hero-slider">
+            <img name="slide">
+        </div>
+        </div>
+    </section>
+
+    <!---SEARCH SECTION------>
+    <section id="search">
+        <h2>Enter your search here</h2>
+        <form class="form">
+            <input type="text" class="search" placeholder="Search movie or series">
+            <button type="submit" class="btn submitBtn">Search<i class="fa fa-search"></i></button>
+        </form>
+    </section>
+
+    <!----RESULTS SECTION-->
+    <section id="results">
+       <div class="cards">
+
+       </div> 
+    </section>
+
+    <script src="./JS/main.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+</html>

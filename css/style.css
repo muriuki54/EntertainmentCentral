@@ -1,0 +1,206 @@
+h1,h2,h3,h4 {
+    font-weight: 400;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+nav {
+    display: flex;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: #fff;
+}
+nav > * {
+    margin: 15px 40px;
+}
+.toggleBtn {
+    position: absolute;
+    right: 0;
+}
+
+.toggleBtn .fa {
+    font-size: 28px;
+}
+#hero {
+    background: #1e5799;
+    background: -moz-linear-gradient(45deg, #1e5799 36%, #1ede8b 100%);
+    background: -webkit-linear-gradient(45deg, #1e5799 36%,#1ede8b 100%);
+    background: linear-gradient(45deg, #1e5799 36%,#1ede8b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#1ede8b',GradientType=1 );
+    width: 100%;
+}
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    max-width: 90%;
+    margin: 50px auto;
+    color: #fff;
+    padding: 30px 30px 50px 30px;
+}
+
+.hero-slider {
+    width: 100%;
+    height: 70vh;
+}
+.hero-slider img {
+    width: 100%;
+    height: 100%;
+}
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#hero .btn {
+    width: 40%;
+    text-align: center;
+    background: #fff;
+}
+
+.btn {
+    display: block;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 30px;
+    font-size: 20px;
+    color:#1e5799;
+    text-decoration: none;
+}
+
+/*aside section*/
+aside {
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    transition: 0.5s;
+}
+aside ul {
+    margin-top: 50px;
+}
+aside ul li{
+    padding-top: 40px; 
+    list-style: none;
+}
+aside ul li a {
+    text-decoration: none;
+    color: #1e5799;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+#search {
+    background: #1ede8b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+
+#search h2 {
+    margin-left: 15%;
+}
+
+#search form {
+    margin: 30px auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#search input {
+    width: 70%;
+    background: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    color: #262626 !important;
+}
+
+#search .btn {
+    background: #53FFB4;
+    color: #fff;
+    padding: 12px 40px !important;
+}
+#search .btn .fa {
+    font-size:  16px;
+    margin-left: 15px;
+}
+
+/*  RESULTS-----*/
+#results {
+    background: #1ede8b;  
+    background: -moz-linear-gradient(45deg, #1ede8b 18%, #1ede8b 18%, #1e5799 74%);
+    background: -webkit-linear-gradient(45deg, #1ede8b 18%,#1ede8b 18%,#1e5799 74%);
+    background: linear-gradient(45deg, #1ede8b 18%,#1ede8b 18%,#1e5799 74%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ede8b', endColorstr='#1e5799',GradientType=1 );
+    width: 100%;
+    margin-top: 0px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 2rem;
+    padding: 50px 50px;
+}
+
+.card {
+    background: rgb(37, 52, 165);
+    text-align: center;
+    color: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card:nth-child(even){
+    background: #1ede8b;
+}
+.card img{
+   width: 100%;
+   height: 400px; 
+}
+
+
+
+/*-------HELP PAGE-----------*/
+#help {
+    background: #1e5799;
+    background: -moz-linear-gradient(45deg, #1e5799 36%, #1ede8b 100%);
+    background: -webkit-linear-gradient(45deg, #1e5799 36%,#1ede8b 100%);
+    background: linear-gradient(45deg, #1e5799 36%,#1ede8b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#1ede8b',GradientType=1 );
+    width: 100%;
+}
+/*------MEDIA QUERIES----------*/
+@media(max-width: 768px){
+    .hero-slider {
+        display: none
+    }
+
+    .hero-content {
+       display: flex;
+    }
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+        padding: 50px 50px;
+    }
+}

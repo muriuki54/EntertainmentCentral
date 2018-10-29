@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EntertainmentCentral - Selected movie</title>
+    <link href="./css/help.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+        <nav>
+                <div class="brand">BRAND</div>
+                <div class="toggleBtn"><i class="fa fa-bars"></i></div>
+         </nav>
+
+           <!--sidebar-->
+    <aside class="sidebar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">My List</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+        </aside>
+
+        <section id="singleMovie">
+            <div class="movieDetails"></div>
+            <div class="plot"></div>
+        </section>
+        
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        let toggleBtn = document.querySelector('.toggleBtn'),
+            sidebar = document.querySelector('.sidebar'),
+            movieDetails = document.querySelector('.movieDetails'),
+            plot = document.querySelector('.plot');
+        //  TOGGLE MENU
+        toggleBtn.addEventListener('click',() => {
+            sidebar.classList.toggle('active')
+        })
+
+    function showSingle() {
+    let singleMovie = JSON.parse(sessionStorage.getItem('movie'));
+    console.log(singleMovie)
+
+    axios({
+        method: 'get',
+        url: ' http://www.omdbapi.com/?i='+singleMovie.id+'&apikey=7b4fc861'
+    }).then((single) => {
+        console.log(single.data)
+        movieDetails.innerHTML += `
+    <div class="singlePoster">
+    <img src="${single.data.Poster}">
+    </div>
+    <div class="singleDetails">
+    <h2>${single.data.Title}</h2>
+    <div class="singleCard">
+    <h2>Movie Details </h2>
+    <ul>
+    <li>Year Released: ${single.data.Year}</li>
+    <li>Genre: ${single.data.Genre}</li>
+    <li>Director: ${single.data.Director}</li>
+    <li>Actors: ${single.data.Actors}</li>
+    <li>Language: ${single.data.Language}</li>
+    <li>IMDb Rating: ${single.data.Rating}</li>
+    </ul>
+    </div>
+    </div>
+    `;
+
+    plot.innerHTML += `
+    <div class="single">
+    <div class="singlePlot">
+    <h3><u>Plot</u></h3>
+    <p>${single.data.Plot}</p>    
+    </div>
+    </div>
+    <div class="actionBtn">
+    <button class="btn">Add To List</button>   
+    <button class="btn">Download Torrent</button>   
+    <a href="index.html" class="btn">Go to search</a>    
+    </div>
+    `;
+    }).catch((err) => {
+        alert(err)
+    })
+}
+
+    showSingle();
+    </script>
+</body>
+</html>

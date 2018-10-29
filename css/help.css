@@ -1,0 +1,182 @@
+h1,h2,h3,h4 {
+    font-weight: 400;
+}
+
+
+body {
+    background: #1ede8b;  
+    background: -moz-linear-gradient(45deg, #1ede8b 18%, #1ede8b 18%, #1e5799 74%);
+    background: -webkit-linear-gradient(45deg, #1ede8b 18%,#1ede8b 18%,#1e5799 74%);
+    background: linear-gradient(45deg, #1ede8b 18%,#1ede8b 18%,#1e5799 74%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ede8b', endColorstr='#1e5799',GradientType=1 );
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: sans-serif;
+    width: 100%;
+}
+
+h1{
+    margin-top:  30px;
+    margin-left: 50px;
+}
+h2 {
+    margin-left: 0;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: #fff;
+}
+nav > * {
+    margin: 15px 40px;
+}
+nav .toggleBtn .fa {
+    font-size: 28px;
+}
+.toggleBtn {
+    position: absolute;
+    right: 0;
+}
+/*aside section*/
+aside {
+    position: fixed;
+    left: -250px;
+    top:0;
+    width: 250px;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    transition: 0.5s;
+}
+aside ul {
+    margin-top: 50px;
+}
+aside ul li{
+    padding-top: 40px; 
+    list-style: none;
+}
+aside ul li a {
+    text-decoration: none;
+    color: #1e5799;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+#help {
+    margin-top:  30px;
+    margin-left: 50px;
+}
+
+footer {
+    background: #1ede8b;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 50px;
+    text-align: center;
+    color: #fff;
+}
+
+span {
+    color: #000;
+}
+
+/*----      MOVIE .HTML---------*/
+#singleMovie {
+    display: grid;
+    grid-template-columns: 1fr; 
+    padding: 10px 30px;
+}
+
+.movieDetails,
+.plot {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1rem;
+    margin: 30px;
+}
+.movieDetails .singleCard {
+    background: #fff;
+    color: #1e5799;
+    /*height: calc(100% - 16%);*/
+    padding: 20px 30px;
+}
+
+.movieDetails {
+    height: 500px;
+}
+.singleCard {
+    height: calc(100% - 22%);
+}
+.singleCard ul {
+    padding: 0px;
+}
+.singleCard ul li{
+    padding: 10px;
+    list-style: none;
+    border: 1px solid #1e5799;
+    margin-top: 5px;
+    border-radius: 30px;
+}
+
+.singlePoster {
+    width: 100%;
+    height: 100%;
+}
+.singlePoster img {
+    min-width: 80%;
+    height: 100%;
+}
+.plot .singlePlot{
+    background: #fff;
+    color: #1e5799;
+    padding: 30px;
+}
+
+.plot .btn {
+    background: rgb(3, 151, 87);
+    color: #fff;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 30px;
+    display: block;
+    margin: 20px;
+    width: 40%;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+}
+
+/*---MEDA QUERIES----------*/
+
+@media(max-width: 768px){
+
+    .movieDetails,
+    .plot {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        height: auto;
+        margin: 10px auto;
+    }
+
+    .singlePoster img {
+        min-width: 100%;
+        height: auto;
+    }
+
+    .plot .btn {
+        background: #fff;
+        color: #1e5799;
+        width: 100%;
+        margin-left: 0;
+    }
+    .movieDetails {
+        height: auto;
+    }
+    
+}
