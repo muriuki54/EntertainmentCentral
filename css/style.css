@@ -188,6 +188,42 @@ aside ul li a {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#1ede8b',GradientType=1 );
     width: 100%;
 }
+
+#showSaved {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1rem
+}
+
+.savedDetails {
+    width: 100%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.savedDetails .innerDetails {
+    width: 60%;
+    height: 400px;
+    float: left;
+    background: rgba(255,255,255,0.8);
+    color: #1e5799;
+    /*display: grid;
+    place-content: center;*/
+}
+
+.savedDetails .innerDetails .btn:nth-child(2){
+    background: #1ede8b;
+    color: #fff;
+}
+.savedDetails .innerDetails .btn:nth-child(3){
+    background: rgb(240, 81, 81);
+    color: #fff;
+}
+.savedDetails .innerDetails .left {
+    margin-left: 30px;
+}
+
 /*------MEDIA QUERIES----------*/
 @media(max-width: 768px){
     .hero-slider {
@@ -203,4 +239,27 @@ aside ul li a {
         grid-gap: 2rem;
         padding: 50px 50px;
     }
+
+    #showSaved {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1rem
+    }
+    
+    .savedDetails {
+        width: 100%;
+        height: 400px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .savedDetails .innerDetails {
+        width: 100%;
+        height: 300px;
+        margin-top: 150px;
+        float: left;
+        background: rgba(255,255,255,0.8);
+        color: #1e5799;
+    }
+    
 }
