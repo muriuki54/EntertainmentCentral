@@ -15,10 +15,10 @@ let i = 0; //Start point
 let images = [];
 
 //images list
-images[0] = '../posters/poster5.jpg';
-images[1] = '../posters/poster7.jpg';
-images[2] = '../posters/poster8.jpg';
-images[3] = '../posters/poster9.jpg';
+images[0] = '../imgs/poster5.jpg';
+images[1] = '../imgs/poster7.jpg';
+images[2] = '../imgs/poster8.jpg';
+images[3] = '../imgs/poster9.jpg';
 
 
 
@@ -113,17 +113,26 @@ function displaySaved () {
             <div class="savedDetails" style="background-image:url(${data.data.Poster})">
             <div class="innerDetails">
             <h1 class="left">${data.data.Title}</h1>
-            <button class="btn left" onclick="">Remove</btn>
+            <button class="btn left" onclick="removeMovie('${data.data.imdbID}')">Remove</btn>
             </div>
             </div>
         `;
              
-        }).then((data) => {
-            console.log(data)
         }).catch((err) => {
            console.log(err)
         })
     }   
+}
+function removeMovie(id){
+    let savedMovie = JSON.parse(localStorage.getItem('savedMovie'));
+    for(var i = 0; i < savedMovie.length; i++){
+        if(savedMovie[i].id == id ){
+            savedMovie.splice(i,1);
+        }
+    }
+
+    localStorage.setItem('savedMovie',JSON.stringify(savedMovie));
+    displaySaved();
 }
 
 

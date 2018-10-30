@@ -1,7 +1,8 @@
 let toggleBtn = document.querySelector('.toggleBtn'),
             sidebar = document.querySelector('.sidebar'),
             movieDetails = document.querySelector('.movieDetails'),
-            plot = document.querySelector('.plot');
+            plot = document.querySelector('.plot'),
+            remove = document.querySelector('.remove');
         //  TOGGLE MENU
         toggleBtn.addEventListener('click',() => {
             sidebar.classList.toggle('active')
@@ -43,7 +44,7 @@ let toggleBtn = document.querySelector('.toggleBtn'),
     </div>
     <div class="actionBtn">
     <button class="btn" onclick = "addList()">Add To List</button>  
-    <a href="index.html" class="btn">Go to search</a>    
+    <a href="index.html" class="btn remove">Go to search</a>    
     </div>
     `;
     }).catch((err) => {
@@ -52,7 +53,7 @@ let toggleBtn = document.querySelector('.toggleBtn'),
 }
 showSingle();
 
-    function addList() {
+    function addList(e) {
         let saveMovie = JSON.parse(sessionStorage.getItem('movie'));
 
         console.log(saveMovie);
@@ -66,6 +67,9 @@ showSingle();
             savedMovie.push(saveMovie);
             localStorage.setItem('savedMovie',JSON.stringify(savedMovie));
         } 
+
+        remove.innerHTML = 'Saved';
+        remove.style.background = '#CE6588'
     }
 
 
