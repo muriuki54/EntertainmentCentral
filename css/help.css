@@ -69,16 +69,7 @@ aside ul li a {
 #help {
     margin-top:  30px;
     margin-left: 50px;
-}
-
-footer {
-    background: #1ede8b;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 50px;
-    text-align: center;
-    color: #fff;
+    padding: 10px 30px;
 }
 
 span {
@@ -151,6 +142,19 @@ span {
     text-align: center;
 }
 
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: #1ede8b;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    margin-top: 30px;
+    z-index: -2;
+}
+
+
 /*---MEDA QUERIES----------*/
 
 @media(max-width: 768px){
@@ -179,4 +183,13 @@ span {
         height: auto;
     }
     
+    footer {
+        width: 100%;
+        background: #1ede8b;
+        color: #fff;
+       position: relative;
+       bottom: 0;
+       left: 0;
+        text-align: center;
+    }  
 }

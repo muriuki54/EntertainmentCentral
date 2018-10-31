@@ -243,6 +243,7 @@ aside ul li a {
 }
 
 footer {
+    width: 100%;
     background: #1ede8b;
     color: #fff;
     padding: 40px;
