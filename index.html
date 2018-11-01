@@ -8,7 +8,7 @@
     <link href="./css/style.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
-<body>
+<body id="body">
     <!-------HERO SECTION=------------->
 
     <!--sidebar-->
@@ -64,5 +64,35 @@
     </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./JS/main.js"></script>
+    <script>
+        //HERO SECTION IMAGE SLIDER
+        let i = 0; //Start point
+        let images = [];
+
+        //images list
+        images[0] = './imgs/poster5.jpg';
+        images[1] = './imgs/poster7.jpg';
+        images[2] = './imgs/poster8.jpg';
+        images[3] = './imgs/poster9.jpg';
+
+
+
+        //Change img
+        function changeImg() {
+
+            if(i < images.length - 1){
+                i++
+            } else {
+                i = 0;
+            }
+
+            document.slide.src = images[i];
+
+        setTimeout("changeImg()", 4000);
+        }
+
+        changeImg();
+
+    </script>
 </body>
 </html>

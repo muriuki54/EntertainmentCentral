@@ -1,5 +1,11 @@
-let toggleBtn = document.querySelector('.toggleBtn'),
-    sidebar = document.querySelector('.sidebar'),
+
+
+window.addEventListener('load',() =>{
+    
+})
+
+let toggleBtn = document.querySelectorAll('.toggleBtn'),
+    sidebar = document.querySelectorAll('.sidebar'),
     search = document.querySelector('.search'),
     submitBtn = document.querySelector('.submitBtn'),
     form = document.querySelector('form'),
@@ -13,44 +19,17 @@ let toggleBtn = document.querySelector('.toggleBtn'),
 //     console.log(toggleBtn)
 // })
 
-//HERO SECTION IMAGE SLIDER
-let i = 0; //Start point
-let images = [];
-
-//images list
-images[0] = '../imgs/poster5.jpg';
-images[1] = '../imgs/poster7.jpg';
-images[2] = '../imgs/poster8.jpg';
-images[3] = '../imgs/poster9.jpg';
-
-
-
-//Change img
-function changeImg() {
-
-    if(i < images.length - 1){
-        i++
-    } else {
-        i = 0;
-    }
-
-    document.slide.src = images[i];
-
-   setTimeout("changeImg()", 4000);
-}
-
-changeImg();
-
-
  //  TOGGLE MENU
-    toggleBtn.addEventListener('click',() => {
-        sidebar.classList.toggle('active');
+ for (let i = 0;i < toggleBtn.length;i++){
+    toggleBtn[i].addEventListener('click',() => {
+        for (let i = 0;i < sidebar.length;i++){
+            sidebar[i].classList.toggle('active');
+            sidebar[i].addEventListener('click',() => {
+                sidebar[i].classList.remove('active');
+            })
+        }
     })
-sidebar.addEventListener('click',() => {
-    sidebar.classList.remove('active');
-})
-
-    
+ }  
 
 //SEARCH FIELDS
 form.addEventListener('submit',searchQuery);
@@ -235,5 +214,5 @@ function removeMovie(id){
     localStorage.setItem('savedMovie',JSON.stringify(savedMovie));
     showSaved.innerHTML = '';
     return displaySaved();
+   
 }
-

@@ -78,8 +78,13 @@ nav > * {
     width: 40%;
     text-align: center;
     background: #fff;
+    transition: 0.5s;
 }
-
+#hero .btn:hover {
+    color: #fff;
+    background: #1ede8b;
+    transform:scale(1.1)
+}
 .btn {
     display: block;
     padding: 12px 20px;
@@ -90,6 +95,7 @@ nav > * {
     color:#1e5799;
     text-decoration: none;
 }
+
 
 /*aside section*/
 aside {
