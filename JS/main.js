@@ -89,11 +89,10 @@ function getMovie(id,title) {
 
 function showSingle() {
     let singleMovie = JSON.parse(sessionStorage.getItem('movie'));
-    console.log(movieDetails)
 
     axios({
         method: 'get',
-        url: 'https://www.omdbapi.com/?i='+singleMovie.id+'&apikey=7b4fc861'
+        url: 'https://www.omdbapi.com/?i='+singleMovie.id+'&plot=full&type&apikey=7b4fc861'
     }).then((single) => {
         movieDetails.innerHTML += `
     <div class="singlePoster">
@@ -104,7 +103,8 @@ function showSingle() {
     <div class="singleCard">
     <h2>Movie Details </h2>
     <ul>
-    <li>Year Released: ${single.data.Year}</li>
+    <li>Year(s) Released: ${single.data.Year}</li>
+    <li>Type: ${single.data.Type}</li>
     <li>Genre: ${single.data.Genre}</li>
     <li>Director: ${single.data.Director}</li>
     <li>Actors: ${single.data.Actors}</li>
@@ -186,8 +186,6 @@ function displaySaved () {
     }   
 }
 
-displaySaved();
-
 function viewMovie(id,title) {
     if(sessionStorage.getItem('movie') !== null){
         sessionStorage.removeItem('movie');
@@ -213,6 +211,5 @@ function removeMovie(id){
 
     localStorage.setItem('savedMovie',JSON.stringify(savedMovie));
     showSaved.innerHTML = '';
-    return displaySaved();
-   
+    displaySaved();
 }

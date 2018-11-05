@@ -40,6 +40,11 @@ nav .toggleBtn .fa {
     position: absolute;
     right: 0;
 }
+
+.brand img {
+    width: 40px;
+    height: 40px;
+}
 /*aside section*/
 aside {
     position: fixed;
@@ -143,9 +148,7 @@ span {
 }
 
 footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+    display: block;
     background: #1ede8b;
     color: #fff;
     padding: 40px;
@@ -184,10 +187,8 @@ footer {
     }
     
     footer {
-        width: 100%;
         background: #1ede8b;
         color: #fff;
-       position: relative;
        bottom: 0;
        left: 0;
         text-align: center;
