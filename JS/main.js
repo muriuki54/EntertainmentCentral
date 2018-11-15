@@ -138,7 +138,7 @@ function showSingle() {
         console.log(saveMovie);
         if(localStorage.getItem('savedMovie') == null) {
             let savedMovie = [];
-            savedMovie.push(saveMovie);
+            savedMovie.unshift(saveMovie);
             localStorage.setItem('savedMovie',JSON.stringify(savedMovie));
 
         } else {
