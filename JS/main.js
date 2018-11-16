@@ -173,7 +173,7 @@ function displaySaved () {
             showSaved.innerHTML += `
             <div class="savedDetails" style="background-image:url(${data.data.Poster})">
             <div class="innerDetails">
-            <h1 class="left">${data.data.Title}</h1>
+            <h2 class="left">${data.data.Title}</h2>
             <button class="btn left" onclick="viewMovie('${data.data.imdbID}','${data.data.Title}')">Check out</button>
             <button class="btn left" onclick="removeMovie('${data.data.imdbID}')">Remove</btn>
             </div>

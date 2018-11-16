@@ -78,18 +78,19 @@ nav > * {
     justify-content: center;
 }
 
-#hero .btn {
+#hero .button {
     width: 40%;
     text-align: center;
     background: #fff;
     transition: 0.5s;
 }
-#hero .btn:hover {
+#hero .button:hover {
     color: #fff;
     background: #1ede8b;
     transform:scale(1.1)
 }
-.btn {
+.btn ,
+.button{
     display: block;
     padding: 12px 20px;
     border-radius: 30px;
